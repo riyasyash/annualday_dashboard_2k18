@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  employee_id: 1
+  ref_employee: 1
+  code: MyString
+  attempts: 1
+  is_identified: false
+
+two:
+  name: MyString
+  employee_id: 1
+  ref_employee: 1
+  code: MyString
+  attempts: 1
+  is_identified: false
