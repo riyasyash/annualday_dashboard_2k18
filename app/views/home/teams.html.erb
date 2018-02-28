@@ -1,0 +1,24 @@
+<%= javascript_include_tag "progressbar" %>
+<%= javascript_include_tag "teams" %>
+<div class="nav">
+  <div class="logo">
+    <img src="https://sahajsoft.com/wp-content/themes/sahaj/images/sahaj-software-logo.png" height="50px">
+  </div>
+</div>
+<div class="head">
+  <h1>Find your teammate!<h1>
+</div>
+<div class="strip">
+  <% @teams.each do |team| %>
+
+<div class="container" id="container_<%= team.name %>" name=<%= team.name %> colour=<%= team.colour %> pct=<%= (team.members_found.to_f/team.total_members.to_f)%>>
+</div>
+
+<% end %>
+</div>
+<div class="input-form">
+  <form>
+    <input type="text" name="employee_id" maxlength="4">
+    <input type="submit" value="Submit">
+  </form>
+</div>

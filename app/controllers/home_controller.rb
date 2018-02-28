@@ -21,8 +21,8 @@ class HomeController < ApplicationController
   end
 
   def teams
-    team_list = Team.get_details()
-    render json: team_list
+    @teams = Team.all
+    # render json: team_list
   end
 
   def team_details
