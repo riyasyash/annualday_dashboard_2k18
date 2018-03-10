@@ -26,12 +26,16 @@
   margin-top: 14%;
 }
 .logo {
+  top: 0;
   height: 10px;
   width: 70px;
 }
-
+.logout {
+  float: right;
+  margin-right: 10%;
+}
 body {
-  background:#c4f28c;
+  background: linear-gradient(#fff)
 }
 .input-form{
   margin-top: 30%;
@@ -59,13 +63,20 @@ input {
 }
 .head {
   font-family:"Comic Sans MS", cursive, sans-serif;
-  color: #fff;
+  color: #000;
   text-align: center;
-  font-size: 30px;
+  position: relative;
+  top: 0;
+  margin-top: 0;
+  font-size: 20px;
   text-shadow: 2px 2px 4px #000000;
 }
+.head .footnote{
+  font-size: 20px;
+  top: 0;
+}
 .quote-container {
-  margin-top: 10px;
+  margin-top: 1px;
   position: relative;
   float: right;
 }
@@ -148,4 +159,8 @@ ul {
 
 ul li:before {
   content: '✓';
+}
+.footnote {
+  margin-top: 0px;
+  margin-left: 10%;
 }

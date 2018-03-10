@@ -36,7 +36,7 @@ class HomeController < ApplicationController
 
   def identify
     employee_id = 1049 #change to take employee id from login email
-    ref_employee = params[:ref_employee]
+    ref_employee = params[:employee_id]
     code = params[:code]
     member = Member.find_by_employee_id(employee_id)
     response, status = member.identify(ref_employee,code)

@@ -17,8 +17,9 @@
   </ul>
   </blockquote>
 </div>
+<div>
 <div class="head">
-  <h1>Find your teammate!<h1>
+  <h1>Find Your Teammate!<h1>
 </div>
 
 <div class="strip">
@@ -29,8 +30,8 @@
 <% end %>
 </div>
 <div class="input-form">
-  <form>
-    <input type="text" name="employee_id" maxlength="4">
+  <form method="post" action=<%=root_url+'home/member/identify'%> >
+    <input type="text" name="employee_id" maxlength="4" placeholder="Your Teammate" >
     <input type="submit" value="Verify">
   </form>
 </div>
