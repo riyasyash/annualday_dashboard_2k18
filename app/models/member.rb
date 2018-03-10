@@ -27,9 +27,9 @@ class Member < ApplicationRecord
       return member_dict
     end
 
-    def identify(ref_employee,code)
+    def identify(ref_employee)
       unless self.attempts<1
-        if self.ref_employee == ref_employee and self.code == code and self.is_identified == false
+        if self.ref_employee == ref_employee.to_i and self.is_identified == false
           self.is_identified = true
           team = Team.find_by_id(self.team_id)
           team.members_found = team.members_found+1
@@ -45,6 +45,6 @@ class Member < ApplicationRecord
           return "identficatn failed,#{self.attempts} attempts left for the day", 403
         end
       end
-      return "no remaining attempts",403
+      return "no remaining attempts, try again tomorrow",403
     end
 end

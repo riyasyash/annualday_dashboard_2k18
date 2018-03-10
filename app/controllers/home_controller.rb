@@ -39,9 +39,12 @@ class HomeController < ApplicationController
     ref_employee = params[:employee_id]
     code = params[:code]
     member = Member.find_by_employee_id(employee_id)
-    response, status = member.identify(ref_employee,code)
-    flash[:alert] = response
-    # render json: {'response': response}, status: status
+    response, status = member.identify(ref_employee)
+    if status == 202
+      flash[:notice] = response
+    else
+      flash[:alert] = response
+    end
     redirect_to root_path
   end
 
