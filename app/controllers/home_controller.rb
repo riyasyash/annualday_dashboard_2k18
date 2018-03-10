@@ -40,8 +40,13 @@ class HomeController < ApplicationController
     code = params[:code]
     member = Member.find_by_employee_id(employee_id)
     response, status = member.identify(ref_employee,code)
-    render json: {'response': response}, status: status
+    flash[:alert] = response
+    # render json: {'response': response}, status: status
+    redirect_to root_path
   end
 
+  def toast(type, text)
+    flash[:toastr] = { type => text }
+  end
 
 end

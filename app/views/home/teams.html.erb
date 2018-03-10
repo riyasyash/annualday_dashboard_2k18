@@ -1,5 +1,6 @@
 <%= javascript_include_tag "progressbar" %>
 <%= javascript_include_tag "teams" %>
+<%= custom_bootstrap_flash %>
 <div class="nav">
   <div class="logo">
     <img src="https://sahajsoft.com/wp-content/themes/sahaj/images/sahaj-software-logo.png" height="50px">
@@ -31,7 +32,7 @@
 </div>
 <div class="input-form">
   <form method="post" action=<%=root_url+'home/member/identify'%> >
-    <input type="text" name="employee_id" maxlength="4" placeholder="Your Teammate" >
+    <input type="text" name="employee_id" maxlength="4" placeholder="Your Teammate" required="true">
     <input type="submit" value="Verify">
   </form>
 </div>
