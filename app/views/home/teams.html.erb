@@ -30,9 +30,11 @@
 </div>
 <% end %>
 </div>
-<div class="input-form">
-  <form method="post" action=<%=root_url+'home/member/identify'%> >
-    <input type="text" name="employee_id" maxlength="4" placeholder="Your Teammate" required="true">
-    <input type="submit" value="Verify">
-  </form>
-</div>
+<% if @show_form %>
+  <div class="input-form">
+    <form method="post" action=<%=root_url+'home/member/identify'%> >
+      <input type="text" name="employee_id" maxlength="4" placeholder="Your Teammate" required="true">
+      <input type="submit" value="Verify">
+    </form>
+  </div>
+<%end%>

@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
+  # before_action :check_sign_in
   def home
+  end
+
+  def show
   end
 
   def add_member
@@ -21,8 +25,8 @@ class HomeController < ApplicationController
   end
 
   def teams
+    @show_form = false
     @teams = Team.all
-    # render json: team_list
   end
 
   def team_details
@@ -45,7 +49,7 @@ class HomeController < ApplicationController
     else
       flash[:alert] = response
     end
-    redirect_to root_path
+    redirect_to teams_path
   end
 
   def toast(type, text)
