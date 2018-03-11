@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  # before_action :check_sign_in
+  before_action :check_sign_in , :except=>[:show]
   def home
   end
 
@@ -25,7 +25,8 @@ class HomeController < ApplicationController
   end
 
   def teams
-    @show_form = false
+    member = Member.find_by_name(current_user.name)
+    @show_form = !member.is_identified
     @teams = Team.all
   end
 
@@ -39,7 +40,8 @@ class HomeController < ApplicationController
   end
 
   def identify
-    employee_id = 1049 #change to take employee id from login email
+    member = Member.find_by_name(current_user.name)
+    employee_id = member.employee_id
     ref_employee = params[:employee_id]
     code = params[:code]
     member = Member.find_by_employee_id(employee_id)
